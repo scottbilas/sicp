@@ -1,0 +1,7 @@
+RACKET="${HOME}/bin/enter_deb racket"
+
+if [ -z "$1" ]; then
+    $RACKET
+else
+    $RACKET /root/parent/sicp/$1
+fi
