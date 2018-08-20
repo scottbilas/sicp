@@ -157,6 +157,14 @@
 
 ) ;case
 
+
+;; template
+;;;;
+;(test-case "ch1-1.8"
+;;;;
+;
+;) ;case
+
 )) ;suite;define
 
 (run-tests ch1-tests)
