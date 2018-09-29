@@ -192,10 +192,9 @@
   (check-eq? 1892 (algo 10)))
 
 (check-it fr)
-;(check-it fi)
+(check-it fi)
 
 ) ;case
-
 
 ;; template
 ;;;;
