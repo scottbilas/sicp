@@ -196,6 +196,33 @@
 
 ) ;case
 
+;;;
+(test-case "ch1-1.12"
+;;;
+
+;     1
+;    1 1
+;   1 2 1
+;  1 3 3 1
+; 1 4 6 4 1
+
+(define (get-ptri-element row col)
+  (if (or (= col 1) (= col row))
+    1
+    (+
+      (get-ptri-element (dec row) (dec col))
+      (get-ptri-element (dec row) col))))
+
+(check-eq? 1 (get-ptri-element 1 1))
+(check-eq? 2 (get-ptri-element 3 2))
+(check-eq? 3 (get-ptri-element 4 3))
+(check-eq? 4 (get-ptri-element 5 2))
+(check-eq? 6 (get-ptri-element 5 3))
+(check-eq? 1 (get-ptri-element 5 5))
+
+) ;case
+
+
 ;; template
 ;;;;
 ;(test-case "ch1-1.8"
