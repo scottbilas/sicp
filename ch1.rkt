@@ -171,10 +171,17 @@
     )))
 
 (define (fi n)
-  (define iter n
-    )
-  (iter n)
-)
+  (define (iter fn-1 fn-2 fn-3 count)
+    (if (= 0 count)
+      fn-3
+      (iter
+        (+ fn-1 (* 2 fn-2) (* 3 fn-3))
+        fn-1
+        fn-2
+        (dec count))))
+  (if (< n 3)
+    n
+    (iter 2 1 0 n)))
 
 (define (check-it algo)
   (check-eq? -5 (algo -5))
