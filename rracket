@@ -1,0 +1,10 @@
+HOST='scott@az-tiny.westeurope.cloudapp.azure.com'
+
+if [ -z "$1" ]; then
+    ssh $HOST racket
+else
+    scp -q ch1.rkt $HOST:~/sicp/$1
+
+    # user can `ssh $HOST` detached somewhere (or just run rracket with no param) to act as multiplexer for speeding these up (avoids renegotiating connects)
+    ssh $HOST "cd sicp; racket $1"
+fi
